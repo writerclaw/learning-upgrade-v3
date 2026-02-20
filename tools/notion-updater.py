@@ -20,10 +20,10 @@ LOGS_DIR = WORKSPACE_DIR / "logs"
 SKILL_DIR = WORKSPACE_DIR / "skills" / "learning-upgrade"
 
 MATON_API_KEY = os.environ.get('MATON_API_KEY', '')
-MATON_BASE_URL = "https://gateway.maton.ai/v1"
+MATON_BASE_URL = "https://gateway.maton.ai/notion/v1"
 
-# Notion 学习日记根页面
-LEARNING_DIARY_ROOT_ID = "1a09bfd6-0b4f-80d7-ab33-ca2e38e0d9f0"
+# Notion 学习日记根页面（使用 v2.0 验证过的 ID）
+LEARNING_DIARY_ROOT_ID = os.environ.get("NOTION_ROOT_PAGE_ID", "30d80316-1300-803f-beab-fd599781e02c")
 
 
 def load_env():
@@ -46,11 +46,11 @@ def load_env():
 
 def notion_request(endpoint, method='GET', data=None):
     """Notion API 请求"""
-    url = f"{MATON_BASE_URL}/notion/{endpoint}"
+    url = f"{MATON_BASE_URL}/{endpoint}"
     headers = {
         "Authorization": f"Bearer {MATON_API_KEY}",
         "Content-Type": "application/json",
-        "Notion-Version": "2022-06-28"
+        "Notion-Version": "2025-09-03"
     }
     ctx = ssl.create_default_context()
     try:

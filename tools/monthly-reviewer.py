@@ -28,12 +28,12 @@ OUTPUT_DIR = LOGS_DIR / "monthly-review"
 
 # === API 配置 ===
 ARK_API_KEY = os.environ.get('ARK_API_KEY', '')
-ARK_BASE_URL = "https://ark.cn-beijing.volces.com/api/v3"
+ARK_BASE_URL = "https://ark.cn-beijing.volces.com/api/coding/v3"
 MATON_API_KEY = os.environ.get('MATON_API_KEY', '')
-MATON_BASE_URL = "https://gateway.maton.ai/v1"
+MATON_BASE_URL = "https://gateway.maton.ai/notion/v1"
 
-# Notion 根页面 ID
-LEARNING_DIARY_ROOT_ID = "1a09bfd6-0b4f-80d7-ab33-ca2e38e0d9f0"
+# Notion 根页面 ID（使用 v2.0 验证过的 ID）
+LEARNING_DIARY_ROOT_ID = os.environ.get("NOTION_ROOT_PAGE_ID", "30d80316-1300-803f-beab-fd599781e02c")
 
 
 def load_env():

@@ -21,7 +21,7 @@ SKILL_DIR = WORKSPACE_DIR / "skills" / "learning-upgrade"
 
 # === API 配置 ===
 ARK_API_KEY = os.environ.get('ARK_API_KEY', '')
-ARK_BASE_URL = "https://ark.cn-beijing.volces.com/api/v3"
+ARK_BASE_URL = "https://ark.cn-beijing.volces.com/api/coding/v3"
 
 def load_env():
     """加载环境变量"""
